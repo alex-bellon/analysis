@@ -1,0 +1,92 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in, top=1.5in]{geometry}
+\usepackage{fancyhdr, amsthm, amssymb, amsmath}
+\usepackage{tikz,mathtools}
+\usepackage{mdframed}
+\usepackage{fancyhdr}
+\usepackage{ifthen}
+\usepackage{comment}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+
+\newboolean{solutions}
+\setboolean{solutions}{true}
+\ifthenelse{\boolean{solutions}}
+{\newenvironment{solution}{\begin{mdframed}[skipbelow=0pt, linecolor=White, backgroundcolor=Green!10]\textbf{Solution:}}{\end{mdframed}}}
+{\excludecomment{solution}}
+
+\setlength{\parindent}{0pt}
+
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+     \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}
+{\end{trivlist}}
+
+\setlength\parindent{0pt}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Analysis I}
+\rhead{Alex Bellon}
+\rfoot{\thepage}
+
+% Commonly used commands get ``macros'', which are shorter and more convenient.
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Int}{\operatorname{Int}}
+
+% Specify the environments (definitions, theorems, exercises, examples, etc.) used:
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{exercise}[thm]{Exercise} % The numbering and style of exercises and theorems should be the same.
+\newtheorem{ax}{Axiom}
+% The asterisk means it will not be numbered.
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{examples}{Examples}
+
+\begin{document}
+
+\section{Homework 1}
+
+\begin{problem}{2.2.2}
+Let $a$ be a positive number. Prove there exists exactly one natural number $b$ such that $b++ = a$.
+\end{problem}
+
+\begin{proof}
+  Proof by contradiction. Assume natural numbers $b \neq c$ such that $b++ = a$ and $c++ = a$. From Axiom 2.4, we know that if $b \neq c$, then $n++ \neq m++$. This implies that $a \neq a$, which is not true.
+
+  % Do I have transitivity? Can I even use proof by contradiction? Do I have reflexivity?
+\end{proof}
+
+\begin{problem}{3.1.6}
+Let $A, B, C$ be sets, and let $X$ be a set containing $A, B, C$ as subsets. Prove De Morgan's law for sets.
+\begin{enumerate}
+    \item $X \setminus (A \cup B) = (X \setminus A) \cap (X \setminus B)$
+    \item $X \setminus (A \cap B) = (X \setminus A) \cup (X \setminus B)$
+\end{enumerate}
+Parts a-g of proposition 3.1.27 can be assumed.
+\end{problem}
+
+\begin{problem}{3.3.2}
+Let $f: X \to Y$ and $g: Y \to Z$ be functions. Shpw tjat of $f$ and $g$ are both injective, then so is $g \circ f$; similarly show that if $f$ and $g$ are both surjective, then so is $g \circ f$.
+\end{problem}
+
+\begin{problem}{3.4.2}
+Let $f: X \to Y$ be a function from one set $X$ to another set $Y$, let $S$ be a subset of $X$, and let $U$ be a subset of $Y$. What, in general can one say about $f^{-1}(f(S))$ and $S$. What about $f(f^{-1}(U))$ and $U$. Prove your assertions.
+\end{problem}
+
+\begin{problem}{3.5.10}
+If $f: X \to Y$ is a function, define the \emph{graph} of $f$ to be the subset of $X \times Y$ defined by $\{x, f(x)\} : x \in X$. Show that two functions $f: X \to Y$. $\bar{f}: X \to Y$ are equal if and only if they share the same graph. Conversely, if $G$ is any subset of $X \times Y$ with the property that for each $x \in X$, the set $\{y \in Y : (x,y) \in G\}$ has exactly one element (or in other words, $G$ obeys the vertical line test), show that there is exactly one function $f: X \to Y$ whose graph is equal to $G$.
+\end{problem}
+
+\begin{problem}{3.6.10}
+Let $A_1, \cdots, A_n$ be finite sets such that $\#(\bigcup_{i \in \{1, \cdots, n\}} A_i) > n$. Show that there exists $i \in \{i, \cdots, n\}$ such that $\#(A_i) \ge 2$. (This is known as the pidgeonhole principle.)
+\end{problem}
+
+\end{document}
