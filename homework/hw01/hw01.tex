@@ -21,7 +21,7 @@
 \setlength{\parindent}{0pt}
 
 \newenvironment{problem}[2][Problem]{\begin{trivlist}
-     \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}
+     \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]\bfseries}
 {\end{trivlist}}
 
 \setlength\parindent{0pt}
@@ -52,7 +52,7 @@
 
 \begin{document}
 
-\section{Homework 1}
+\section*{Homework 1}
 
 \begin{problem}{2.2.2}
 Let $a$ be a positive number. Prove there exists exactly one natural number $b$ such that $b++ = a$.
@@ -60,7 +60,6 @@ Let $a$ be a positive number. Prove there exists exactly one natural number $b$ 
 
 \begin{proof}
   Proof by contradiction. Assume natural numbers $b \neq c$ such that $b++ = a$ and $c++ = a$. From Axiom 2.4, we know that if $b \neq c$, then $n++ \neq m++$. This implies that $a \neq a$, which is not true.
-
   % Do I have transitivity? Can I even use proof by contradiction? Do I have reflexivity?
 \end{proof}
 
@@ -73,20 +72,49 @@ Let $A, B, C$ be sets, and let $X$ be a set containing $A, B, C$ as subsets. Pro
 Parts a-g of proposition 3.1.27 can be assumed.
 \end{problem}
 
+\begin{proof}
+.
+\begin{enumerate}
+  \item Let $X = \{A \cup B \cup C \cup Y\}, Y$, where Y is everything else in $X$ that is not $A \cup B \cup C$. Then
+  \begin{align*}
+    X \setminus (A \cup B) &= C\setminus (A\cup B) \cup Y\\
+    X \setminus A &= B\setminus A \cup C\setminus A \cup Y\\
+    X \setminus A &= B\setminus A \cup C\setminus A \cup Y\\
+  \end{align*}
+
+\end{enumerate}
+\end{proof}
+
 \begin{problem}{3.3.2}
-Let $f: X \to Y$ and $g: Y \to Z$ be functions. Shpw tjat of $f$ and $g$ are both injective, then so is $g \circ f$; similarly show that if $f$ and $g$ are both surjective, then so is $g \circ f$.
+Let $f: X \to Y$ and $g: Y \to Z$ be functions. Show that if $f$ and $g$ are both injective, then so is $g \circ f$; similarly show that if $f$ and $g$ are both surjective, then so is $g \circ f$.
 \end{problem}
+
+\begin{proof}
+
+\end{proof}
 
 \begin{problem}{3.4.2}
 Let $f: X \to Y$ be a function from one set $X$ to another set $Y$, let $S$ be a subset of $X$, and let $U$ be a subset of $Y$. What, in general can one say about $f^{-1}(f(S))$ and $S$. What about $f(f^{-1}(U))$ and $U$. Prove your assertions.
 \end{problem}
 
+\begin{proof}
+
+\end{proof}
+
 \begin{problem}{3.5.10}
 If $f: X \to Y$ is a function, define the \emph{graph} of $f$ to be the subset of $X \times Y$ defined by $\{x, f(x)\} : x \in X$. Show that two functions $f: X \to Y$. $\bar{f}: X \to Y$ are equal if and only if they share the same graph. Conversely, if $G$ is any subset of $X \times Y$ with the property that for each $x \in X$, the set $\{y \in Y : (x,y) \in G\}$ has exactly one element (or in other words, $G$ obeys the vertical line test), show that there is exactly one function $f: X \to Y$ whose graph is equal to $G$.
 \end{problem}
 
+\begin{proof}
+
+\end{proof}
+
 \begin{problem}{3.6.10}
 Let $A_1, \cdots, A_n$ be finite sets such that $\#(\bigcup_{i \in \{1, \cdots, n\}} A_i) > n$. Show that there exists $i \in \{i, \cdots, n\}$ such that $\#(A_i) \ge 2$. (This is known as the pidgeonhole principle.)
 \end{problem}
+
+\begin{proof}
+
+\end{proof}
 
 \end{document}
